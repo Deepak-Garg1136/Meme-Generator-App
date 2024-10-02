@@ -19,9 +19,9 @@ function EditPage() {
   };
 
   return (
-    <div className="editDiv" ref={memeRef}>
+    <div className="editDiv">
       {/* Container with relative position */}
-      <div className="editImage" style={{ position: "relative" }}>
+      <div  ref={memeRef} className="editImage" style={{ position: "relative" }}>
         <img
           src={params.get("url")}
           alt=""
