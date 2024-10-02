@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  /* gap: 15px; */
+}
+
+#root .memeTitle {
+  font-size: 30px;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+  margin-top: 10px;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  text-align: center;
+}
+
+.mainMemeDiv {
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  flex-wrap: wrap;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.memecard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  width: 270px;
+  height: fit-content;
+  background-color: rgba(12, 5, 5, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(14, 13, 13, 0.897);
+  transition: transform 0.3s ease;
+  /* cursor: pointer; */
+  transform: scale(1);
+  transform-origin: center;
+  gap: 10px;
+}
+
+.memecard:hover {
+  transform: scale(1.05);
+}
+
+.memecard img {
+  width: 100%;
+  height: 35vh;
+  /* object-fit: cover; */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1);
+  transform-origin: center;
+  /* cursor: pointer; */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* padding: 10px; */
+  /* margin-bottom: 5px; */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.memecard h5 {
+  /* margin-bottom: 5px; */
+  padding: 0;
+  max-height: 1.5em;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  color: white;
+  padding: 5px;
+  text-wrap: pretty;
+  overflow: auto;
+  /* border-radius: 5px; */
+  /* box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); */
+  /* transition: box-shadow 0.3s ease; */
+}
+
+.memecard button {
+  /* margin-top: 10px; */
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  /* will-change: transform; */
+}
+
+.memecard button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* .editDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 92vh;
+  flex-wrap: wrap;
+}
+
+.editImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60vw;
+}
+
+.editImage img {
+  width: 40vw;
+  height: 70vh;
+
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1);
+  transform-origin: center;
+
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.editButtons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40vw;
+  height: 10vh;
+  flex-wrap: wrap;
+} */
+
+.editDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 92vh;
+  flex-wrap: wrap;
+  padding: 10px; /* Add some padding */
+}
+
+.editImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Change to 100% for smaller screens */
+  max-width: 60vw; /* Maintain max width for larger screens */
+  margin-bottom: 15px; /* Add some spacing at the bottom */
+}
+
+.editImage img {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 70vh; /* Maintain max height */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Combined transition for better performance */
+  /* box-shadow: 0 5px 5px rgba(17, 17, 17, 0.3); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.editButtons {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center;
+  width: 100%; /* Use full width */
+  max-width: 40vw; /* Maintain max width for larger screens */
+  height: 10vh;
+  flex-wrap: wrap; /* Allow wrapping of buttons */
+}
+
+.editButtons button {
+  margin: 5px; /* Add margin to buttons for spacing */
+  padding: 10px 20px; /* Add padding for better touch targets */
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(24, 22, 22, 0.836); /* Dark button background */
+  color: white; /* Button text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.editButtons button:hover {
+  background-color: rgba(
+    24,
+    22,
+    22,
+    1
+  ); /* Lighten button background on hover */
+  /* color: black; Change button text color on hover */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Lighten box shadow on hover */
+}
+
+.textSize {
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.textSize:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.textSize input {
+  border: none;
+  outline: none;
+  color: white;
+  /* padding: 5px; */
+  background: transparent;
+  font-size: 0.8em;
+  font-weight: bolder;
+  height: 4vh;
+  width: 15vw;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .editDiv {
+    flex-direction: column; /* Stack elements on smaller screens */
+    height: auto; /* Adjust height */
+  }
+
+  .editImage {
+    width: 80vw; /* Wider for small screens */
+  }
+
+  .editButtons {
+    width: 90vw; /* Wider buttons for small screens */
+    max-width: none; /* Remove max width to use full available space */
+  }
+}
+
+@media (max-width: 480px) {
+  .editButtons {
+    justify-content: center; /* Center buttons on small screens */
+  }
+
+  .editButtons button {
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    font-size: 0.9em; /* Slightly smaller font */
+    margin: 5px; /* Add margin for spacing */
+  }
+
+  .textSize {
+    font-size: 1em !important;
+  }
+}
